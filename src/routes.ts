@@ -11,8 +11,12 @@ const CreateTagController = new createTagController();
 import { createComplimentController } from "./controllers/createComplimentController";
 const CreateComplimentController = new createComplimentController();
 
+import { authenticateUserController } from "./controllers/authenticateUserController";
+const AuthenticateUserController = new authenticateUserController();
+
 router.post("/users", CreateUserController.handle);
 router.post("/tags", CreateTagController.handle);
-router.post("/compliments", CreateComplimentController.handle);
+router.post("/login", AuthenticateUserController.handle);
+router.post("/compliments/:userId", CreateComplimentController.handle);
 
 export { router };
