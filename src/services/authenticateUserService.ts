@@ -39,6 +39,7 @@ export class authenticateUserService {
       }
     );
 
+    await mongoose.disconnect();
     return token;
   }
 }

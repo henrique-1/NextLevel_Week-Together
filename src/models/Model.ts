@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // User Schema
 export interface IUser extends Document {
@@ -15,7 +15,7 @@ const userSchema: Schema = new mongoose.Schema({
   nome: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   admin: { type: Boolean, required: true, default: false },
-  senha: { type: String, required: true, select: false },
+  senha: { type: String, required: true, select: true },
   created_at: { type: Date, required: true, default: Date.now },
   updated_at: { type: Date, required: true, default: Date.now },
 });
