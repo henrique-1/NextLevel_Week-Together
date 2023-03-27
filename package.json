@@ -6,7 +6,7 @@
   "scripts": {
     "run:dev": "tsx watch ./src/server.ts",
     "build": "tsup ./src",
-    "run:prod": "node ./build/server.js"
+    "run:prod": "node ./dist/server.js"
   },
   "keywords": [],
   "author": "Henrique Bissoli Malaman Alonso (Henrique_1)",
