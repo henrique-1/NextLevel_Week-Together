@@ -18,7 +18,7 @@ import { ensureAuthenticated } from "./middleware/ensureAuthenticated";
 import { ensureAdmin } from "./middleware/ensureAdmin";
 
 router.post("/users", CreateUserController.handle);
-router.post("/tags", ensureAuthenticated, ensureAdmin, CreateTagController.handle);
+router.post("/tags/:userId", ensureAuthenticated, ensureAdmin, CreateTagController.handle);
 router.post("/login", AuthenticateUserController.handle);
 router.post("/compliments/:userId", ensureAuthenticated, CreateComplimentController.handle);
 
